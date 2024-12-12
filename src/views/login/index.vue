@@ -41,7 +41,7 @@ const onSubmit = async () => {
   if (!formType.value) {
     // 登入
     try {
-      const response = await axios.post("http://3.107.7.243:3000/login", {
+      const response = await axios.post("http://13.239.83.152:3000/login", {
         username: loginForm.userName,
         password: loginForm.passWord,
       });
@@ -52,7 +52,7 @@ const onSubmit = async () => {
           username: loginForm.userName,
           password: loginForm.passWord,
         });
-        WebsocketService.connect("ws://3.107.7.243:3000/", response.data.userId);
+        WebsocketService.connect("ws://13.239.83.152:3000/", response.data.userId);
         router.push("/main");
       }
     } catch (error) {
@@ -61,7 +61,7 @@ const onSubmit = async () => {
   } else {
     // 註冊
     try {
-      const response = await axios.post("http://3.107.7.243:3000/register", {
+      const response = await axios.post("http://13.239.83.152:3000/register", {
         username: loginForm.userName,
         password: loginForm.passWord,
       });
